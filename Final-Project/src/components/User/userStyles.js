@@ -34,18 +34,22 @@ export const Container = styled.div`
         width: 155px;
         height: 30px;
         border-radius: 60px;
-        opacity: 10%;
+        opacity: 20%;
         border: none;
+        color: black;
         
     }
     button{
         width: 100px;
         height: 30px;
         border-radius:60px;
-        background-color: grey;
-        color: white;
+        background-color: #F06292 ;
+        color: black;
         font-size: 10px;
         font-family: 'Courier New', Courier, monospace;
+        &:hover{
+            color: white;
+        }
 
     }
     h3{
