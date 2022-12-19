@@ -5,21 +5,11 @@ import MakeUpApi from "../makeupApi/MakeUp";
 export const DataContext = createContext ();
 
 export const DataProvider = (props) => {
-    //const [products, setProducts] = useState([])
     const [menu,setMenu] = useState(false)
     const dataApi = MakeUpApi("all");
     const [carrito,setCarrito] = useState([])
     const [mostrar,setMostrar] =useState([])
     const [total,setTotal] = useState(0)
-
-    //console.log(dataApi);
-
-    /*useEffect(()=>{
-        console.log("setproducts")
-        setProducts(dataApi);
-        console.log(dataApi);
-        console.log(products);
-    },[])*/
     
     const addCarrito = (id) => {
         const check = carrito.every(item =>{
@@ -29,12 +19,7 @@ export const DataProvider = (props) => {
             let data = dataApi.filter(product =>{
                 return product.id === id
             })
-          /*  const object = {
-                id : data.id,
-                brand : data.brand,
-
-                cantidad :1
-            }*/
+            
             if(data.length > 0){
             data[0]['cantidad'] = 1;}
             setCarrito([...carrito,...data])
@@ -60,7 +45,7 @@ export const DataProvider = (props) => {
         addCarrito : addCarrito,
         carrito :[carrito,setCarrito],
         total :[total,setTotal],
-        mostrar :[mostrar,setMostrar]
+        mostrar :[mostrar,setMostrar],
     } 
     return (
        < DataContext.Provider value = {value}>
