@@ -25,6 +25,7 @@ export const Container = styled.div`
         justify-content: center;
         display: block;
         align-items: center;
+        margin: 1rem;
     }
     .firstInput{
         margin-top: 20px;
